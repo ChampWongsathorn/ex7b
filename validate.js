@@ -1,6 +1,8 @@
 function checkSID() {
   let sid = (document.getElementById("sid").value).trim();
-  if (sid.length == 10) {
+
+  // ตรวจสอบความยาว 10 ตัว และต้องเป็นตัวเลข 0-9 เท่านั้น
+  if (sid.length == 10 && /^[0-9]+$/.test(sid)) {
     return true;
   } else {
     return false;
