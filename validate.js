@@ -11,10 +11,19 @@ function checkSID() {
 
 function checkCandiNo() {
   let candi = (document.getElementById("candi").value).trim();
-  if (isNaN(candi) || candi < 1) {
+
+  // ต้องเป็นตัวเลขเท่านั้น
+  if (isNaN(candi)) {
     return false;
-  } else {
+  }
+
+  candi = Number(candi);
+
+  // ต้องอยู่ระหว่าง 1 ถึง 10
+  if (candi >= 1 && candi <= 10) {
     return true;
+  } else {
+    return false;
   }
 }
 
